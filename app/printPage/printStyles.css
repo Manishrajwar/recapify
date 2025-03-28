@@ -1,0 +1,57 @@
+/* printStyles.css */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    padding: 20px;
+  }
+  
+  .container {
+    max-width: 800px;
+    margin: auto;
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .print-button {
+    background: #007bff;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 20px;
+  }
+  
+  .print-button:hover {
+    background: #0056b3;
+  }
+  
+  .print-content {
+    padding: 20px;
+  }
+  
+  .note {
+    border-bottom: 1px solid #ddd;
+    padding: 15px;
+    margin-bottom: 15px;
+  }
+  
+  .note-title {
+    font-size: 22px;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  .note-subtitle {
+    font-size: 18px;
+    color: #555;
+  }
+  
+  .note-description {
+    font-size: 16px;
+    color: #666;
+    margin-top: 5px;
+  }
+  
