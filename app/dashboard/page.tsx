@@ -58,7 +58,6 @@ import {
 } from "firebase/firestore";
 import { firestore } from "../../lib/firebase";
 import { navbarItems } from "@/data/Navitems";
-import { useReactToPrint } from "react-to-print";
 
 export default function DashboardPage() {
   const { userDetails, fetchSavedNotes, notes } = useAppContext();
@@ -81,6 +80,7 @@ export default function DashboardPage() {
   const [noteData, setNoteData] = useState(null);
   const [showingNote, setShowingNote] = useState(null);
 
+
   const handleGenerateNotes = async () => {
     if (!videoId.trim()) {
       toast.error("Please Enter the Video ID");
@@ -95,11 +95,9 @@ export default function DashboardPage() {
         videoId,
         noteType,
       });
-      // console.log("response", response);
       if (response.status === 200) {
         //  toast.success("Successfully generated");
         const result = await response.json();
-        // console.log("result", result);
         setNoteData(result);
         const {
           videoId,
@@ -143,6 +141,7 @@ export default function DashboardPage() {
   };
 
   const showNoteHandler = (data) => {
+    console.log("Dat" , data);
     setIsShowDialogOpen(true);
     setShowingNote(data);
   };
@@ -274,15 +273,15 @@ export default function DashboardPage() {
                   <div className="flex items-center space-x-2">
                     <RadioGroupItem value="short" id="short" />
                     <Label htmlFor="short" className="cursor-pointer">
-                      Short Notes
+                      Quick Notes
                     </Label>
                   </div>
-                  <div className="flex items-center space-x-2">
+                  {/* <div className="flex items-center space-x-2">
                     <RadioGroupItem value="long" id="long" />
                     <Label htmlFor="long" className="cursor-pointer">
                       Long Notes
                     </Label>
-                  </div>
+                  </div> */}
                 </RadioGroup>
               </div>
 
@@ -378,9 +377,9 @@ export default function DashboardPage() {
                     onClick={() => {
                       showNoteHandler(note);
                     }}
-                    className="flex items-center gap-1"
+                    className="flex items-center gap-1 bg-green-400"
                   >
-                    <Trash2 className="h-3.5 w-3.5" />
+                    {/* <Trash2 className="h-3.5 w-3.5" /> */}
                     View
                   </Button>
                   <Button
@@ -420,8 +419,6 @@ export default function DashboardPage() {
       {/* THIS IS FOR SHOW THE NOTES */}
       <Dialog open={isShowDialogOpen} onOpenChange={setIsShowDialogOpen}>
 
-      
-        
         <DialogContent  style={{ maxHeight: "500px" }}  className="sm:max-w-[600px] overflow-y-scroll" >
           <DialogHeader>
             <DialogTitle
@@ -443,7 +440,7 @@ export default function DashboardPage() {
                 <h2>{shownote?.title}</h2>
                 <h4>{shownote?.subtitle}</h4>
                 <ul>
-                  {shownote.description.map((desc, descIndex) => (
+                  {shownote?.description?.map((desc, descIndex) => (
                     <li key={descIndex}>{desc}</li>
                   ))}
                 </ul>

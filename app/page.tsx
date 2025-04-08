@@ -1,6 +1,7 @@
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
-import { YoutubeIcon, BookOpen, Clock, Brain, Download, CheckCircle } from "lucide-react"
+import { YoutubeIcon, BookOpen, Clock, Brain, Download, CheckCircle, Image } from "lucide-react"
+import recapify from "../public/recapify.png"
 
 export default function HomePage() {
   return (
@@ -9,6 +10,7 @@ export default function HomePage() {
         <div className="container flex h-16 items-center justify-between">
           <div className="flex items-center gap-2">
             <YoutubeIcon className="h-6 w-6 text-red-600" />
+             {/* <Image src={recapify} alt="recapify" /> */}
             <span className="text-xl font-bold">Recapify</span>
           </div>
           <nav className="flex items-center gap-4">
@@ -36,7 +38,7 @@ export default function HomePage() {
                 <h1 className="text-4xl font-bold leading-tight tracking-tighter md:text-5xl lg:text-6xl lg:leading-[1.1] bg-gradient-to-r from-purple-700 via-red-500 to-orange-500 bg-clip-text text-transparent">
                   Transform YouTube Videos into Detailed Notes
                 </h1>
-                <p className="mt-6 max-w-[750px] text-lg text-muted-foreground sm:text-xl">
+                <p className="mt-6 max-w-[750px] tex-center text-lg text-muted-foreground sm:text-xl">
                   Enter a YouTube video ID and get comprehensive notes generated for you. Perfect for students,
                   researchers, and content creators.
                 </p>

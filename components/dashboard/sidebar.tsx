@@ -50,7 +50,7 @@ export function Sidebar({ navItems }: SidebarProps) {
         <div className="flex h-16 items-center border-b px-4">
           <Link href="/dashboard" className="flex items-center gap-2">
             <YoutubeIcon className="h-6 w-6 text-red-600" />
-            {!collapsed && <span className="font-bold">YouTube Notes</span>}
+            {!collapsed && <span className="font-bold">Recapify</span>}
           </Link>
           <Button
             variant="ghost"
