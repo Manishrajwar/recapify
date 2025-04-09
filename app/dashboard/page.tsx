@@ -314,11 +314,11 @@ export default function DashboardPage() {
             </p>
           </div>
         ) : (
-          <div className="flex flex-wrap gap-5 justify-center">
+          <div className="flex flex-wrap gap-5">
             {notes.map((note) => (
               <Card
                 key={note.id}
-                className="border-none max-w-[420px] w-full shadow-lg hover:shadow-xl transition-all duration-300 hover:translate-y-[-5px]"
+                className="border-none max-w-[390px] w-full shadow-lg hover:shadow-xl transition-all duration-300 hover:translate-y-[-5px]"
               >
                 <CardHeader className="pb-2">
                   <div className="flex justify-between items-center">
