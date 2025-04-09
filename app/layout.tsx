@@ -1,7 +1,8 @@
+import "./globals.css"; 
+import "../styles/globals.css"
 import type React from "react";
 import { Inter } from "next/font/google";
 import { ThemeProvider } from "@/components/theme-provider";
-import "./globals.css"; 
 import { AppProvider } from "@/context/AppContext";
 import { Toaster } from "react-hot-toast";
 
@@ -28,7 +29,6 @@ export default function RootLayout({
             enableSystem
             disableTransitionOnChange
           >
-            {/* Toaster should be a self-closing component */}
             <Toaster />
             {children}
           </ThemeProvider>

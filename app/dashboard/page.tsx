@@ -193,7 +193,6 @@ export default function DashboardPage() {
     setNoteToDelete(null);
   };
 
-  // Handle Change in Title, Subtitle
   const handleInputChange = (e, field, index) => {
     console.log("e", e.target.value, field, index);
     setEditingNote((prev) => ({
@@ -209,7 +208,6 @@ export default function DashboardPage() {
     }));
   };
 
-  // Handle Change in Description Array
   const handleDescriptionChange = (index, descInd, value) => {
     setEditingNote((prev) => ({
       ...prev,
@@ -231,7 +229,7 @@ export default function DashboardPage() {
     <div className="flex min-h-screen bg-gradient-to-br from-gray-50 to-white dark:from-gray-900 dark:to-gray-800">
       <Sidebar navItems={navItems} />
 
-      <main className="flex-1 p-6 md:p-10">
+      <main  className="flex-1 p-6 md:p-10 md:mt-0 mt-[50px]">
         <h1 className="text-3xl font-bold mb-6 bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent">
           Dashboard
         </h1>
@@ -316,11 +314,11 @@ export default function DashboardPage() {
             </p>
           </div>
         ) : (
-          <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+          <div className="flex flex-wrap gap-5 justify-center">
             {notes.map((note) => (
               <Card
                 key={note.id}
-                className="border-none shadow-lg hover:shadow-xl transition-all duration-300 hover:translate-y-[-5px]"
+                className="border-none max-w-[420px] w-full shadow-lg hover:shadow-xl transition-all duration-300 hover:translate-y-[-5px]"
               >
                 <CardHeader className="pb-2">
                   <div className="flex justify-between items-center">

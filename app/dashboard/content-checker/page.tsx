@@ -199,7 +199,7 @@ export default function ContentCheckerPage() {
     <div className="flex min-h-screen bg-gradient-to-br from-gray-50 to-white dark:from-gray-900 dark:to-gray-800">
       <Sidebar navItems={navItems} />
 
-      <main className="flex-1 p-6 md:p-10">
+      <main className="flex-1 p-6 md:p-10 md:mt-0 mt-[50px]">
         <h1 className="text-3xl font-bold mb-6 bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent">
           Video Content Relevance Checker
         </h1>

@@ -1,7 +1,7 @@
+import "./globals.css"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { YoutubeIcon, BookOpen, Clock, Brain, Download, CheckCircle, Image } from "lucide-react"
-import recapify from "../public/recapify.png"
 
 export default function HomePage() {
   return (

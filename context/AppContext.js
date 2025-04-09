@@ -11,6 +11,8 @@ import {
   collection,
   limit,
 } from "firebase/firestore";
+import Cookies from 'js-cookie';
+
 
 // Create the context
 const AppContext = createContext();
@@ -52,20 +54,22 @@ export function AppProvider({ children }) {
                 : null;
   
   
-  
                if(userdata?.role === "User"){
               setAdminDetails(null);
               setUserDetails(userdata);
+  Cookies.set("recapify_user", JSON.stringify(userdata), { path: "/" });
                }
                else{
                  setAdminDetails(userdata)
                  setUserDetails(null);
-               }
+  Cookies.set("recapify_user", JSON.stringify(userdata), { path: "/" });               }
   
           } else {
             setUser(null);
             setUserDetails(null);
             setAdminDetails(null);
+            Cookies.remove("recapify_user");
+
           }
   
         });

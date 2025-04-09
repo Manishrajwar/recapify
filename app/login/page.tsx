@@ -1,5 +1,4 @@
 "use client"
-
 import { useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
@@ -12,11 +11,12 @@ import { useAppContext } from "@/context/AppContext";
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 import { getDocs, collection, query, where } from "firebase/firestore";
 import { firestore, app } from "../../lib/firebase";
+import Cookies from 'js-cookie';
 
 export default function LoginPage() {
   const router = useRouter();
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const [email, setEmail] = useState("manishsinghrajwar80@gmail.com");
+  const [password, setPassword] = useState("manish");
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
   const { setotherloading} = useAppContext();
@@ -40,6 +40,8 @@ export default function LoginPage() {
       const querySnapshot = await getDocs(userQuery);
 
       if (!querySnapshot.empty) {
+          Cookies.set("recapify_user", JSON.stringify("true"), { path: "/" });
+
         router.push("/dashboard"); 
       } else {
         setError("User data not found in Firestore.");

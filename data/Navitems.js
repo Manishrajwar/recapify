@@ -4,6 +4,7 @@ import { FileText, HelpCircle, Home, LogOut, Search } from "lucide-react";
 import { useRouter } from "next/navigation"; 
 import { getAuth, signOut } from "firebase/auth";
 import toast from "react-hot-toast";
+import Cookies from 'js-cookie';
 
 
 export const navbarItems = () => {
@@ -34,16 +35,16 @@ export const navbarItems = () => {
       label: "Content Checker",
       onClick: () => router.push("/dashboard/content-checker"),
     },
-    {
-      icon: Search,
-      label: "Search Friends",
-      onClick: () => router.push("/searchUsers"),
-    },
-    {
-      icon: Search,
-      label: "Notification",
-      onClick: () => router.push("/notification"),
-    },
+    // {
+    //   icon: Search,
+    //   label: "Search Friends",
+    //   onClick: () => router.push("/searchUsers"),
+    // },
+    // {
+    //   icon: Search,
+    //   label: "Notification",
+    //   onClick: () => router.push("/notification"),
+    // },
     {
       icon: HelpCircle,
       label: "Question Generator",
@@ -56,6 +57,8 @@ export const navbarItems = () => {
     },
     { icon: LogOut, label: "Logout", onClick: () => {
       router.push("/login");
+                  Cookies.remove("recapify_user");
+    
       logout();
 
     } },
